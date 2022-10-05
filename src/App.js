@@ -28,7 +28,7 @@ export default function App() {
       .then(r => r.text())
       .then(text => setEntryData(text))
   }, [])
-  console.log(entryData)
+
   function newNote() {
     var today = new Date()
     const newNote = {
