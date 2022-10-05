@@ -17,24 +17,29 @@ export default function App() {
   const [currentNoteId, setCurrentNoteId] = React.useState(
     (notes[0] && notes[0].id) || ""
   )
+  const [entryData, setEntryData] = React.useState("")
 
   React.useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes))
   }, [notes])
 
+  React.useEffect(() => {
+    fetch('https://raw.githubusercontent.com/Luisjor/Markdown-App/main/src/Components/TextArea.js')
+      .then(r => r.text())
+      .then(text => setEntryData(text))
+  }, [])
+  console.log(entryData)
   function newNote() {
-    console.log(notes.length)
     var today = new Date()
     const newNote = {
       id:nanoid(),
       key:nanoid(),
       date: today.toLocaleDateString("en-US"),
       title: "untitled-doc.md",
-      body: "# Type your markdown note here"
+      body: entryData
     }
     setNotes(prevNotes => [newNote, ...prevNotes])
     setCurrentNoteId(newNote.id)
-    console.log(notes.length)
   }
 
   function updateNote(event) {
