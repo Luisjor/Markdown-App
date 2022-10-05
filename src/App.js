@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import ReactMarkdown from 'react-markdown'
 import Header from "./Components/Header"
 import Menu from "./Components/Menu"
