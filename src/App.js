@@ -23,6 +23,7 @@ export default function App() {
   }, [notes])
 
   function newNote() {
+    console.log(notes.length)
     var today = new Date()
     const newNote = {
       id:nanoid(),
@@ -33,6 +34,7 @@ export default function App() {
     }
     setNotes(prevNotes => [newNote, ...prevNotes])
     setCurrentNoteId(newNote.id)
+    console.log(notes.length)
   }
 
   function updateNote(event) {
@@ -78,20 +80,22 @@ export default function App() {
   }
 
   return (
-    <>
-      {showMenu &&
+    <>        
+      {(showMenu || notes.length === 0) &&
         <Menu
           onClick={newNote}
           notes={notes}
           deleteNote={deleteNote}
           setCurrentNoteId={setCurrentNoteId}/>}
 
+      {notes.length > 0 ?
       <main>
         <Header
           showMenu={menu}
           title={findCurrentNote().title}
           updateTitle={updateTitle}
           />
+
         <section className="main">
         
             {showInput &&
@@ -147,9 +151,11 @@ export default function App() {
             </section>
 
         </section>
-        
       </main>
-      </>
+      :
+      ""
+}
+  </>
   );
 }
 

@@ -273,6 +273,7 @@ header hr{
   flex-direction: column;
   padding: 1rem;
   box-sizing: border-box;
+  min-height: 100vh;
   max-height: 100vh;
   overflow-y: auto;
 }
