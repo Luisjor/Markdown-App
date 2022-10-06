@@ -23,11 +23,7 @@ export default function App() {
     localStorage.setItem("notes", JSON.stringify(notes))
   }, [notes])
 
-  React.useEffect(() => {
-    fetch('https://raw.githubusercontent.com/Luisjor/Markdown-App/main/src/Components/TextArea.txt')
-      .then(r => r.text())
-      .then(text => setEntryData(text))
-  }, [])
+
 
   function newNote() {
     var today = new Date()
