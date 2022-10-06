@@ -6,35 +6,45 @@
 }
 
 ::-webkit-scrollbar-track{
-  background-color: #2b2d31;
+  background-color: var(--BG-Header);
   border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color: #e46643;
+  background-color: var(--Accesory-Orange);
   border-radius: 50px;
 }
 /* End Scrollbar style */
 
 /* Start Page Themes */
-.dark-theme{
+.theme-black{
   --BG-Markdown: #151619;
-  --BG-Menu-Titles: #1d1f22;
+  --BG-Menu: #1d1f22;
+  --BG-Titles: #1d1f22;
   --BG-Header: #2b2d31;
 
   --Accesory-Orange: #e46643;
+  --Accesory-Orange-Hover: #e46643c2;
   --Principal-Text: white;
   --Secondary-Text: #c1c4cb;
+  --Secondary-Text-hover: #c1c4cb23;
+  --Markdown-Principal-Color: white;
+  --Markdown-Secundary-Color: #c1c4cb;
 }
 
-.light-theme{
-  --BG-Markdown: #ffffff;
-  --BG-Menu-Titles: #ffffff;
-  --BG-Header: #ffffff;
+.theme-white{
+  --BG-Markdown: white;
+  --BG-Menu: #1d1f22;
+  --BG-Titles: #f5f5f5;
+  --BG-Header: #2b2d31;
 
   --Accesory-Orange: #e46643;
-  --Principal-Text: rgb(0, 0, 0);
-  --Secondary-Text: #000000;
+  --Accesory-Orange-Hover: #e46643c2;
+  --Principal-Text: white;
+  --Secondary-Text: #c1c4cb;
+  --Secondary-Text-hover: #c1c4cb23;
+  --Markdown-Principal-Color: black;
+  --Markdown-Secundary-Color: black;
 }
 
 /* End Page Themes */
@@ -57,13 +67,13 @@ main{
 
 body {
   margin: 0;
-  background-color: #1d1f22;
+  background-color: var(--BG-Titles);
 }
 
 header{
   min-height: 40px;
   height: 7vh;
-  background-color: #2b2d31;
+  background-color: var(--BG-Header);
   color: white;
   display: flex;
   align-items: center;
@@ -124,7 +134,7 @@ header hr{
  /* Start of Theme Toggler */
 .themeToggler{
   margin-top: auto;
-  color:#c1c4cb;
+  color:var(--Secondary-Text);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -137,7 +147,7 @@ header hr{
   --toggle-shadow-offset: 10px;
   --toggle-wider: 3em;
   --color-grey: #cccccc;
-  --color-green: #151619;
+  --color-green: var(--BG-Markdown);
  }
  
  .slider {
@@ -155,7 +165,7 @@ header hr{
   display: inline-block;
   width: var(--toggle-diameter);
   height: var(--toggle-diameter);
-  background-color: #e46643;
+  background-color: var(--Accesory-Orange);
   border-radius: calc(var(--toggle-diameter) / 2);
   position: absolute;
   top: var(--button-toggle-offset);
@@ -189,11 +199,11 @@ header hr{
 
 .docTitle{
   font-size: 12px;
-  color: #c1c4cb;
+  color: var(--Secondary-Text);
 }
 
 .menuBtn{
-  color:#e46643;
+  color:var(--Accesory-Orange);
   background-color: transparent;
   border: 0px;
   font-size: 1.5rem;
@@ -210,21 +220,6 @@ header hr{
   overflow-y: auto;
   margin: 15px 0px 15px 0px;
   word-break: break-all;
-}
-
-.saveBtn{
-  margin-left: auto;
-  margin-right: 1rem;
-  background-color: #e46643;
-  color: white;
-  border: 0px;
-  border-radius: 5px;
-  height: 35px;
-  padding: 0px 20px 0px 20px;
-}
-
-.saveBtn:hover{
-  background-color: #e46643c2;
 }
 
 .menuSelect{
@@ -247,13 +242,13 @@ header hr{
 }
 
 .selectNote:hover{
-  color: #c1c4cb;
+  color: var(--Secondary-Text);
 }
 
 .deleteNote{
   background-color: transparent;
   border: none;
-  color: #c1c4cb23;
+  color: var(--Secondary-Text-hover);
 }
 
 .deleteNote:hover{
@@ -266,7 +261,7 @@ header hr{
 } 
 
 .menuOpen{
-  background-color: #1d1f22;
+  background-color: var(--BG-Menu);
   min-width: 250px;
   max-width: 250px;
   display: flex;
@@ -289,7 +284,7 @@ header hr{
   margin-top: 0px;
   font-size: .8rem;
   letter-spacing: 2px;
-  color: #c1c4cb;
+  color: var(--Secondary-Text);
 }
 
 .elementsMenu{
@@ -302,7 +297,7 @@ header hr{
   margin-top: 1rem;
   width: 100%;
   min-height: 35px;
-  background-color: #e46643;
+  background-color: var(--Accesory-Orange);
   color: white;
   border: 0px;
   border-radius: 5px;
@@ -310,7 +305,7 @@ header hr{
 }
 
 .newDoc:hover{
-  background-color: #e46643c2;
+  background-color: var(--Accesory-Orange-Hover);
 }
 
 .main {
@@ -322,7 +317,7 @@ header hr{
 .markdownInput {
   width: 100%;
   height: 100%;
-  border-right: 2px solid #c1c4cb;
+  border-right: 2px solid var(--Secondary-Text);
 }
 
 .sectionTitle h2{
@@ -334,8 +329,8 @@ header hr{
 .sectionTitle{
   display: flex;
   align-items: center;
-  background-color: #1d1f22;
-  color: #c1c4cb;
+  background-color: var(--BG-Titles);
+  color: var(--Markdown-Principal-Color);
   box-sizing: border-box;
   padding-left: 25px;
   height: 5%;
@@ -353,7 +348,7 @@ header hr{
   margin-left: auto;
   margin-right: 1rem;
   background-color: transparent;
-  color: #c1c4cb;
+  color: var(--Secondary-Text);
   border: 0px;
 
 }
@@ -365,15 +360,15 @@ header hr{
   padding: 15px 15px 0px 15px;
   overflow-y: auto;
   resize: none;
-  color: #c1c4cb;
-  background-color: #151619;
+  color: var(--Markdown-Principal-Color);
+  background-color: var(--BG-Markdown);
   outline: none;
   border: 0px;
 }
 
 .textOutput{
-  color: white;
-  background-color: #151619;
+  color: var(--Markdown-Principal-Color);
+  background-color: var(--BG-Markdown);
   padding: 0px 15px 0px 15px;
   height: 95%;
   overflow-y: auto;
@@ -403,32 +398,32 @@ h5{
 
 h6{
   font-size: 14px;
-  color: #e46643;
+  color: var(--Accesory-Orange);
 }
 
 p{
   margin: 0px;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 a{
-  color: white;
-  font-weight: 100;
+  color: var(--Markdown-Principal-Color);
+  font-weight: 300;
 }
 
 a:hover{
-  color: #e46643;
+  color: var(--Accesory-Orange);
   transition: .5s;
 }
 
 ul, ol {
   list-style: none; /* Remove default bullets */
-  font-weight: 100;
+  font-weight: 300;
 }
 
 ul li::before {
   content: "\2022";
-  color: #e46643;
+  color: var(--Accesory-Orange);
   font-weight: bold;
   display: inline-block; 
   width: 1em;
@@ -441,11 +436,11 @@ code{
 
 blockquote{
   box-sizing: border-box;
-  background-color: #2b2d31;
+  background-color: var(--BG-Titles);
   transition: background-color 500ms ease;
   padding: 33px;
   border-radius: 4px;
-  border-left: 4px solid #e46643;
+  border-left: 4px solid var(--Accesory-Orange);
 
 }
 

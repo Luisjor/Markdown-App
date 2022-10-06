@@ -1,6 +1,20 @@
 import React from "react"
 
 export default function Menu(props) {
+    document.documentElement.className = localStorage.theme || 'theme-white';
+
+    function toggleTheme() {
+        if (localStorage.getItem('theme') === 'theme-black') {
+            setTheme('theme-white');
+        } else {
+            setTheme('theme-black');
+        }
+    }
+
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = themeName;
+    }
 
     const notesTitles = props.notes.map((element) =>
         <div
@@ -40,6 +54,14 @@ return (
         >+ New Document</button>
         <div className="notesMenu">
             {notesTitles}
+        </div>
+        <div className="themeToggler">
+            <i className="fa-solid fa-moon"></i>
+                <label className="switch">
+                <input type="checkbox" onClick={toggleTheme}/>
+                <span className="slider"></span>
+                </label>
+            <i className="fa-solid fa-sun"></i>
         </div>
     </section>
 )
