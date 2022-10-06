@@ -1,7 +1,7 @@
 import React from "react"
 
 export default function Menu(props) {
-    document.documentElement.className = localStorage.theme || 'theme-white';
+    document.documentElement.className = localStorage.theme || 'theme-black';
 
     function toggleTheme() {
         if (localStorage.getItem('theme') === 'theme-black') {
