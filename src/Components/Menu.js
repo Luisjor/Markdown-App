@@ -5,9 +5,9 @@ export default function Menu(props) {
 
     function toggleTheme() {
         if (localStorage.getItem('theme') === 'theme-black') {
-            setTheme('theme-black');
-        } else {
             setTheme('theme-white');
+        } else {
+            setTheme('theme-dark');
         }
     }
 
