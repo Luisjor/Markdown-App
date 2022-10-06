@@ -41,14 +41,6 @@ return (
         <div className="notesMenu">
             {notesTitles}
         </div>
-        <div className="themeToggler">
-            <i className="fa-solid fa-moon"></i>
-                <label className="switch">
-                <input type="checkbox"/>
-                <span className="slider"></span>
-                </label>
-            <i className="fa-solid fa-sun"></i>
-        </div>
     </section>
 )
 }
