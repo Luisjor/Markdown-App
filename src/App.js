@@ -9,6 +9,23 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./App.css";
 
 export default function App() {
+  document.documentElement.className = localStorage.theme || 'theme-white';
+
+  function toggleTheme() {
+      if (localStorage.getItem('theme') === 'theme-black') {
+          setTheme('theme-white');
+      } else {
+          setTheme('theme-black');
+      }
+  }
+
+  function setTheme(themeName) {
+      localStorage.setItem('theme', themeName);
+      document.documentElement.className = themeName;
+  }
+
+
+
   const [showMenu, setShowMenu] = React.useState(false)
   const [showInput, setShowInput] = React.useState(true)
   const [notes, setNotes] = React.useState(
@@ -91,7 +108,8 @@ export default function App() {
           onClick={newNote}
           notes={notes}
           deleteNote={deleteNote}
-          setCurrentNoteId={setCurrentNoteId}/>}
+          setCurrentNoteId={setCurrentNoteId}
+          toggleTheme={toggleTheme}/>}
 
       {notes.length > 0 ?
       <main>
