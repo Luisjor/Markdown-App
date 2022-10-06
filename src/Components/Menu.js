@@ -42,12 +42,10 @@ return (
             {notesTitles}
         </div>
         <div className="themeToggler">
-            <i className="fa-solid fa-moon"></i>
                 <label className="switch">
                 <input type="checkbox" onClick={props.toggleTheme}/>
                 <span className="slider"></span>
                 </label>
-            <i className="fa-solid fa-sun"></i>
         </div>
     </section>
 )

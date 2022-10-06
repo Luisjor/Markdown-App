@@ -9,7 +9,7 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./App.css";
 
 export default function App() {
-  document.documentElement.className = localStorage.theme || 'theme-white';
+  document.documentElement.className = localStorage.theme || 'theme-black';
 
   function toggleTheme() {
       if (localStorage.getItem('theme') === 'theme-black') {
