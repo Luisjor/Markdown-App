@@ -24,7 +24,7 @@ export default function App() {
   }, [notes])
 
   React.useEffect(() => {
-    fetch('https://raw.githubusercontent.com/Luisjor/Markdown-App/main/src/Components/TextArea.js')
+    fetch('https://raw.githubusercontent.com/Luisjor/Markdown-App/main/src/Components/TextArea.txt')
       .then(r => r.text())
       .then(text => setEntryData(text))
   }, [])
