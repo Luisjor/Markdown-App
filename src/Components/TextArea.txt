@@ -1,4 +1,5 @@
 # Welcome to Markdown
+---
 
 Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
 
@@ -28,8 +29,6 @@ You can see examples of ordered and unordered lists above.
 This markdown editor allows `for inline-code` snippets, like this: `<p>I'm inline</p>`. It also allows for larger code blocks like this:
 
 ```js
-<main>
-  <h1>This is a larger code block</h1>
-<h2>
-</main>
+var number = 7;
+return number % 2 === 0 ? "Even" : "Odd"
 ```
