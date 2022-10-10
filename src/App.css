@@ -55,6 +55,7 @@
 
 #root{
   display: flex;
+  overflow-x: hidden;
 }
 
 main{
