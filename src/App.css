@@ -357,7 +357,7 @@ header hr{
   width: 100%;
   height: 95%;
   box-sizing: border-box;
-  padding: 15px 15px 0px 15px;
+  padding: 15px;
   overflow-y: auto;
   resize: none;
   color: var(--Markdown-Principal-Color);
@@ -456,6 +456,12 @@ blockquote p, blockquote a{
     flex-direction: column;
   }
   .markdownInput {
+    display: flex;
+    flex-direction: column;
     border-right: 0px;
+  }
+  .markdownResult{
+    display: flex;
+    flex-direction: column;
   }
 }
